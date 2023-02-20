@@ -3,19 +3,19 @@ const isAuthenticated = require('../middlewares/isAuthenticated.js')
 const isLoggedIn = require('../middlewares/isAuthenticated.js')
 
 
-router.get('/profile', (req, res, next) => {
+router.get('/profile', isAuthenticated, (req, res, next) => {
   res.render('profile', {
     title : 'Profile page'
   })
 })
 
-router.get('/favorites', (req, res, next) => {
+router.get('/favorites', isLoggedIn, (req, res, next) => {
   res.render('favorites', {
     title: 'My Favorites'
   })
 })
 
-router.get('/to-visit', (req, res, next) => {
+router.get('/to-visit', isLoggedIn, (req, res, next) => {
   res.render('to-visit', {
     title: 'My To Visit List'
   })
