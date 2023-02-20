@@ -9,12 +9,13 @@ router.get('/sign-up', async (req, res, next) => {
   })
 })
 
+
 router.post('/sign-up', async (req, res, next) => {
-  const { username, password } = req.body
-  console.log(username, password)
+  const { username, mail, password } = req.body
+
 
   try {
-    if (!username || !password) {
+    if (!username || !password || !mail) {
       return res.render('auth/sign-up', { errorMessage : 'Something is missing!'} )
     }
     if (password.length < 8) {
@@ -30,6 +31,7 @@ router.post('/sign-up', async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, salt)
     const userToCreate = {
       username,
+      mail,
       password: hashedPassword
     }
     const userFromDb = User.create(userToCreate)
@@ -45,17 +47,19 @@ router.get('/log-in', (req, res, next) => {
     title: 'log in Page' } )
 })
 
+
 router.post('/log-in', async (req, res, next) => {
-  const { username, password } = req.body
+  const { username, password, mail } = req.body
+
 
   try {
-    if (!username || !password) {
+    if (!username || !password || !mail) {
       return res.render('auth/log-in', { errorMessage : 'Something is missing!'} )
     }
   
     const foundUser = await User.findOne(
       { username },
-      { password : 1, username : 1 }
+      { password : 1, username : 1, mail: 1 }
       )
     if (!foundUser) {
       return res.render('auth/log-in', { errorMessage : 'Not found, register yourself first!'} )
@@ -83,4 +87,6 @@ router.get('/log-out', (req, res, next) => {
   })
 })
 
-module.exports = router
+module.exports = router 
+
+
