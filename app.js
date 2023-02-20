@@ -12,5 +12,11 @@ app.use(express.static(__dirname + '/public'))
 const indexRoutes = require('./routes/index.routes')
 app.use('/', indexRoutes)
 
+const PORT = process.env.PORT
+
+app.listen(PORT, () => {
+    console.log(`Server listening on port http://localhost:${PORT}`)
+})
+
 
 module.exports = app;
