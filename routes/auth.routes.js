@@ -3,14 +3,16 @@ const User = require('../models/User.model')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 
-router.get('/signup', async (req, res, next) => {
+router.get('/sign-up', async (req, res, next) => {
   res.render('auth/sign-up', {
     title: 'Sign up Page'
   })
 })
 
-router.post('/signup', async (req, res, next) => {
+
+router.post('/sign-up', async (req, res, next) => {
   const { username, mail, password } = req.body
+
 
   try {
     if (!username || !password || !mail) {
@@ -33,20 +35,22 @@ router.post('/signup', async (req, res, next) => {
       password: hashedPassword
     }
     const userFromDb = User.create(userToCreate)
-    res.redirect('/login')
+    res.redirect('/log-in')
 
   } catch (error) {
     next(error)
   }
 })
 
-router.get('/login', (req, res, next) => {
+router.get('/log-in', (req, res, next) => {
   res.render('auth/log-in', {
     title: 'log in Page' } )
 })
 
-router.post('/login', async (req, res, next) => {
+
+router.post('/log-in', async (req, res, next) => {
   const { username, password, mail } = req.body
+
 
   try {
     if (!username || !password || !mail) {
@@ -79,7 +83,7 @@ router.get('/log-out', (req, res, next) => {
     if (error) {
       return next(error)
     }
-    res.redirect('/login')
+    res.redirect('/log-in')
   })
 })
 
