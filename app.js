@@ -5,6 +5,8 @@ const hbs = require('hbs')
 
 const app = express()
 
+require('./db')
+
 app.set('view engine', 'hbs')
 app.set('views', __dirname + '/views')
 app.use(express.static(__dirname + '/public'))
