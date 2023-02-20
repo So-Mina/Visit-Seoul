@@ -12,5 +12,6 @@ router.get('/', (req, res, next) => {
 
 router.use('/', require('./auth.routes'))
 router.use('/', require('./user.routes'))
+router.use('/', require('./places.routes'))
 
 module.exports = router
