@@ -22,10 +22,13 @@ const postSchema = new Schema({
   description: {
     type: String,
     required: true
+  }, 
+  recommended: {
+    type : Boolean,
   },
   openningHours: [{String}], // verify type with Google Api
   officialWebsite: {String}, // veitfy type with Google Api 
-  displayMap: String // verify type with Google Api
+  displayMap: String, // verify type with Google Api
 },
 {
     timestamps: true,
