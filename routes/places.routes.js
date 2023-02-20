@@ -1,11 +1,21 @@
 const express = require('express')
 const router = express.Router()
+const Place = require('./../models/post.model')
 
-router.get('/places', (req, res, next) => {
-  res.render('places', {
-    title : 'Places Page'
-  })
+router.get('/places', async(req, res, next) => {
+  try {
+    const places = await Place.find()
+    res.render('places', {
+      title : 'Places Page',
+      places
+    })
+  } catch (error) {
+    
+  }
+  
 })
+
+
 
 
 
