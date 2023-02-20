@@ -3,13 +3,13 @@ const User = require('../models/User.model')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 
-router.get('/sign-up', async (req, res, next) => {
+router.get('/signup', async (req, res, next) => {
   res.render('auth/sign-up', {
     title: 'Sign up Page'
   })
 })
 
-router.post('/sign-up', async (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   const { username, password } = req.body
 
   try {
@@ -32,7 +32,7 @@ router.post('/sign-up', async (req, res, next) => {
       password: hashedPassword
     }
     const userFromDb = User.create(userToCreate)
-    res.redirect('/log-in')
+    res.redirect('/login')
 
   } catch (error) {
     next(error)
@@ -78,7 +78,7 @@ router.get('/log-out', (req, res, next) => {
     if (error) {
       return next(error)
     }
-    res.redirect('/log-in')
+    res.redirect('/login')
   })
 })
 
