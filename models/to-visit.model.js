@@ -1,4 +1,4 @@
-const { schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const toVisitSchema = new Schema ({
   post: {

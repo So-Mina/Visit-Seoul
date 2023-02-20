@@ -14,6 +14,6 @@ const favoritesSchema = new Schema ({
     timestamps: true,
 })
 
-const Favorites = model("Favorties", favoritesSchema)
+const Favorites = model("Favorites", favoritesSchema)
 
 module.exports = Favorites
