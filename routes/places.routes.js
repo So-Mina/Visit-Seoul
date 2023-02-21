@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const Place = require('./../models/post.model')
+const Place = require('./../models/Post.model')
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 
 router.get('/', async(req, res, next) => {
