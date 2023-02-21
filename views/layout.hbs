@@ -28,32 +28,31 @@
       <a href="/places">
       <i class="fa-solid fa-location-dot"></i> Places
       </a>
+
         {{#if isLoggedIn}}
           <a href="/favorites">
           <i class="fa-solid fa-star"></i> Favorites
           </a>
-             <a href="/to-visit">
+          <a href="/to-visit">
           <i class="fa-solid fa-star"></i> To Visit
           </a>
           <a href="/profile">
           <i class="fa-solid fa-user"></i> Profile
           </a>
-        {{/if}}
-
-        {{#else}}
-      <a href="/log-in">
-      <i class="fa-solid fa-user-plus"></i> Log In
-      </a>
-      <a href="/sign-up">
-      <i class="fa-solid fa-user-plus"></i> Sign Up
-      </a>
-      {{/else}}
-
-        {{#if isLoggedIn}}
-          <a href="/log-out">
+           <a href="/log-out">
           <i class="fa-solid fa-user-xmark"></i> Log Out
           </a>
+        
+        {{else}}
+          <a href="/log-in">
+          <i class="fa-solid fa-user-plus"></i> Log In
+          </a>
+          <a href="/sign-up">
+          <i class="fa-solid fa-user-plus"></i> Sign Up
+          </a>
         {{/if}}
+
+      
     </nav>
 
     {{{body}}}
