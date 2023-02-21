@@ -3,7 +3,7 @@ const isAuthenticated = require('../middlewares/isAuthenticated.js')
 const isLoggedIn = require('../middlewares/isAuthenticated.js')
 
 
-router.get('/profile', isAuthenticated, (req, res, next) => {
+router.get('/', isAuthenticated, (req, res, next) => {
   res.render('profile', {
     title : 'Profile page'
   })

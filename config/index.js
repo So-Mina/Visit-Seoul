@@ -13,9 +13,6 @@ const session = require('express-session')
 // Store the session in the database
 const MongoStore = require('connect-mongo')
 
-// ℹ️ Serves a custom favicon on each request
-const favicon = require("serve-favicon")
-
 // ℹ️ global package used to `normalize` paths amongst different operating systems
 const path = require("path")
 
@@ -35,9 +32,6 @@ module.exports = (app) => {
   app.set("view engine", "hbs");
   // Handles access to the public folder
   app.use(express.static(path.join(__dirname, "..", "public")))
-
-  // Handles access to the favicon
-  app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")))
 
 
   app.use(session({
