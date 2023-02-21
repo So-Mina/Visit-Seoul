@@ -1,4 +1,9 @@
+{{#if isAdmin}}
+  <a href="/create">create a new place</a>
+{{/if}}
+
 <h1> places to visit </h1>
+
 <div class="placesContainer">
     {{#each places}}
         {{> post this}}
