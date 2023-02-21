@@ -1,16 +1,9 @@
-const express = require('express')
-const router = express.Router()
+const router = require('express').Router()
+const isAuthenticated = require('../middlewares/isAuthenticated.js')
+const isLoggedIn = require('../middlewares/isAuthenticated.js')
 const Place = require('./../models/Post.model')
+const User = require('./../models/User.model')
 
-router.get('/', async(req, res, next) => {
-  try {
-    const places = await Place.find()
-    res.render('favorites', {
-      title : 'Favorites',
-      favorites
-    })
-  } catch (error) {
-    
-  }
-  
-})
+
+
+module.exports = router
