@@ -4,7 +4,7 @@ const router = express.Router()
 const Place = require('./../models/Post.model')
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 
-router.get('/', async(req, res, next) => {
+router.get('/places', async(req, res, next) => {
   try {
     const places = await Place.find()
     res.render('places', {
@@ -17,7 +17,7 @@ router.get('/', async(req, res, next) => {
 })
 
 
-router.get('/:id', async(req, res, next) => {
+router.get('/places/:id', async(req, res, next) => {
 
   try {
     const { id } = req.params
@@ -33,7 +33,7 @@ router.get('/:id', async(req, res, next) => {
 })
 
 
-router.get('/:id/api', (req, res, next) => {
+router.get('/places/:id/api', (req, res, next) => {
   console.log(req.params.id)
 	Place.findOne({_id: req.params.id}, (error, place) => {
 		if (error) { 
