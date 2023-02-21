@@ -11,7 +11,7 @@ const favoritesSchema = new Schema ({
   }
 },
 {
-    timestamps: true,
+  timestamps: true,
 })
 
 const Favorites = model("Favorites", favoritesSchema)

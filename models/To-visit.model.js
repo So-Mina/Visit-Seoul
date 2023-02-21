@@ -12,7 +12,7 @@ const toVisitSchema = new Schema ({
   note: String
 },
 {
-    timestamps: true,
+  timestamps: true,
 })
 
 const ToVisit = model("ToVisit", toVisitSchema)
