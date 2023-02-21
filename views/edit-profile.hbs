@@ -1,0 +1,33 @@
+<section class="edit-form">
+  <div>
+    <form action="/edit-profile" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="username">Username :</label>
+        <input type="text" name="name" value="{{currentUser.username}}">
+      </div>
+
+      <div>
+        <label for="mail">Mail :</label>
+        <input type="email" name="mail" value="{{currentUser.mail}}">
+      </div>
+
+      <div>
+        <label for="password">Password :</label>
+        <input type="password" name="password" value="{{currentUser.password}}">
+      </div>
+
+<input type="hidden" name="id" value="{{currentUser._id}}">
+
+      <button type="submit">Save changes</button>
+    </form>
+  </div>
+</section>
+
+
+{{#if errorMessage}}
+  <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+{{/if}}
+
+{{#if successMessage}}
+  <div class="alert alert-success" role="alert">{{successMessage}}</div>
+{{/if}}

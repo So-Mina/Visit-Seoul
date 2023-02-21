@@ -1,6 +1,6 @@
 const express = require('express')
-const User = require('../models/User.model')
 const router = express.Router()
+const User = require('../models/User.model')
 const bcrypt = require('bcryptjs')
 const mongoose = require('mongoose')
 
@@ -12,10 +12,7 @@ router.get('/sign-up', async (req, res, next) => {
 
 router.post('/sign-up', async (req, res, next) => {
 
-  // const { username, mail, password } = req.body
-
   try {
-    // const { username, mail, password } = req.body
     const username = req.body.username
     const mail = req.body.mail
     const password = req.body.password

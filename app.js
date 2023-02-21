@@ -12,9 +12,12 @@ app.set('view engine', 'hbs')
 app.set('views', __dirname + '/views')
 app.use(express.static(__dirname + '/public'))
 hbs.registerPartials(path.join(__dirname + '/views', '/partials'))
+app.use(require('./middlewares/exposeUserToView'))
 
 const indexRoutes = require('./routes/index.routes')
 app.use('/', indexRoutes)
+
+require('./error-handling')(app);
 
 const PORT = process.env.PORT
 
