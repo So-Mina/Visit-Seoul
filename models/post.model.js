@@ -30,6 +30,10 @@ const postSchema = new Schema({
   recommended: {
     type : Boolean,
   },
+  location: { 
+    type: { type: String }, 
+    coordinates: [Number] 
+  },
   openningHours: [{String}], // verify type with Google Api
   officialWebsite: {String}, // veitfy type with Google Api 
   displayMap: String, // verify type with Google Api
@@ -37,6 +41,8 @@ const postSchema = new Schema({
 {
     timestamps: true,
 })
+
+postSchema.index({ location: '2dsphere' });
 
 const Post = model("Post", postSchema)
 

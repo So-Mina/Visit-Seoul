@@ -7,6 +7,7 @@
 #postImg {
   display: flex;
   width: 200px;
+  height: auto;
   margin: auto;
   justify-content: center;
 }
@@ -43,4 +44,11 @@
   margin-left: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+#map {
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  margin-top: 2rem;
 }
