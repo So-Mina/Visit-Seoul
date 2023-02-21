@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const isAdmin = require('./../middlewares/isAdmin')
 const Place = require('./../models/Post.model')
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 

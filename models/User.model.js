@@ -15,9 +15,10 @@ const userSchema = new Schema({
     required: true,
     select: false
   },
-  isAdmin: {
-    type: Boolean,
-    default: false
+  userType: {
+    type: String,
+    enum: ['admin', 'user'],
+    default: 'user',
   },
   photo: String,
   about: String,
