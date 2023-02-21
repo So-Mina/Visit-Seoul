@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose')
-
+ 
 const favoritesSchema = new Schema ({
   post: {
     type: Schema.Types.ObjectId,
