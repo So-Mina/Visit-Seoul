@@ -1,22 +1,22 @@
 <form action='/log-in' method='post'>
 
-  {{!-- <div>
+  <div>
     <label for='username'>Username: </label>
-    <input type='text' id='username' name='username' placeholder='Username:' />
-  </div> --}}
+    <input type='text' id='username' name='username' placeholder='Username' />
+  </div>
+ 
   <div>
     <label for='mail'>mail: </label>
-    <input type='mail' id='mail' name='mail' />
+    <input type='email' id='mail' name='mail' />
   </div>
 
   <div>
     <label for='password'>Password: </label>
-    <input type='password' required id='password' name='password' />
+    <input type='password' id='password' name='password' />
   </div>
-  
-  
-  <button>log-in</button>
 
-  <p>Need an account? <a href='/sign-up'>Sign up!</a></p>
+  <button type="submit">log-in</button>
 
 </form>
+
+  <p>Need an account? <a href='/sign-up'>Sign up!</a></p>
