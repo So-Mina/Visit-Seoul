@@ -1,5 +1,6 @@
-<h1> places </h1>
-
-{{#each places}}
-<h2>{{name}}</h2>
-{{/each}}
+<h1> places to visit </h1>
+<div class="placesContainer">
+    {{#each places}}
+        {{> post this}}
+    {{/each}}
+</div>

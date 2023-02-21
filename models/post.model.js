@@ -23,6 +23,10 @@ const postSchema = new Schema({
     type: String,
     required: true
   }, 
+  smallDescription: {
+    type: String,
+    required: true
+  },
   recommended: {
     type : Boolean,
   },
