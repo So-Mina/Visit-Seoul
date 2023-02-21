@@ -3,3 +3,44 @@
   margin: 0;
   padding: 0;
 }
+
+#postImg {
+  display: flex;
+  width: 200px;
+  margin: auto;
+  justify-content: center;
+}
+
+.postContainer {
+  width: 25%;
+  border: 1px solid black;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: 10px 5px 5px grey;
+  border-radius: 5%;
+}
+
+.placesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#postLink {
+  margin-top: 2rem;
+  text-align: right;
+  bottom: 0;
+}
+
+.infos {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  margin-top: 3rem;
+}
+
+.infos p {
+  margin-left: 1rem;
+  justify-content: center;
+  align-items: center;
+}
