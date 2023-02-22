@@ -1,1 +1,49 @@
 <h1>Create a new place</h1>
+<form action="/places/create" method="post">
+<label for="name">Name</label>
+<input type="text" name="name" id="name" placeholder="name">
+<label for="photo">Photo</label>
+<input type="text" name="photo" id="photo" placeholder="photo">
+<label for="address">Address</label>
+<input type="text" name="address" id="address">
+<label for="area">Area</label>
+<select name="area" id="area">
+    <option value="Dobong-gu">Dobong-gu</option>
+    <option value="Dongdaemun-gu">Dongdaemun-gu</option>
+    <option value="Dongjak-gu">Dongjak-gu</option>
+    <option value="Eunpyeong-gu">Eunpyeong-gu</option>
+    <option value="Gangbuk-gu">Gangbuk-gu</option>
+    <option value="Gangdong-gu">Gangdong-gu</option>
+    <option value="Gangnam-gu">Gangnam-gu</option>
+    <option value="Gangseo-gu">Gangseo-gu</option>
+    <option value="Geumcheon-gu">Geumcheon-gu</option>
+    <option value="Guro-gu">Guro-gu</option>
+    <option value="Gwanak-gu">Gwanak-gu</option>
+    <option value="Gwangjin-gu">Gwangjin-gu</option>
+    <option value="Jongno-gu">Jongno-gu</option>
+    <option value="Jung-gu">Jung-gu</option>
+    <option value="Jungnang-gu">Jungnang-gu</option>
+    <option value="Mapo-gu">Mapo-gu</option>
+    <option value="Nowon-gu">Nowon-gu</option>
+    <option value="Seocho-gu">Seocho-gu</option>
+    <option value="Seodaemun-gu">Seodaemun-gu</option>
+    <option value="Seongbuk-gu">Seongbuk-gu</option>
+    <option value="Seongdong-gu">Seongdong-gu</option>
+    <option value="Songpa-gu">Songpa-gu</option>
+    <option value="Yangcheon-gu">Yangcheon-gu</option>
+    <option value="Yeongdeungpo-gu">Yeongdeungpo-gu</option>
+    <option value="Yongsan-gu">Yongsan-gu</option>
+</select>
+<label for="smallDescription">Small Description</label>
+<input type="text" name="smallDescription" id="smallDescription">
+<label for="description">Description</label>
+<input type="text" name="description" id="description">
+<label for="recommended">Recommended</label>
+<input type="checkbox" name="recommended" id="recommended">
+<label for="latitude">Latitude</label>
+<input type="text" name="latitude" id="latitude">
+<label for="longitude">Longitude</label>
+<input type="text" name="longitude" id="longitude">
+
+<button>Create</button>
+</form>
