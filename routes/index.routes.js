@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const Place = require("./../models/Post.model")
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
-    res.render('main', { title: 'Home Page' })
+    const recoPlaces = await Place.find({recommended: true})
+    res.render('main', { title: 'Home Page' , recoPlaces})
   } catch (error) {
     next(error)
   }
