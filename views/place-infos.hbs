@@ -1,8 +1,9 @@
-<h1>{{place.name}}</h1>
+<h1 data-id="{{place._id}}">{{place.name}}</h1>
 
-  <i class="fa-regular fa-star" onclick="this.classList.toggle('fa-solid')"></i>
 
-  <i class="fa-regular fa-bookmark" onclick="this.classList.toggle('fa-solid')"></i>
+<i class="fa-regular fa-star favorite {{#if isFav}}fa-solid{{/if}}" ></i>
+
+<i class="fa-regular fa-bookmark" onclick="this.classList.toggle('fa-solid')"></i>
 
 <div class="infos">
    <img id="placeInfosImg" src={{place.photo}} alt="{{place.name}}">
@@ -13,7 +14,7 @@
 
 
 <!--  Axios CDN  -->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
 <!--  Google Maps Key  -->
 <script

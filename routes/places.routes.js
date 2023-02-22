@@ -1,4 +1,5 @@
 const express = require('express')
+const Favorites = require('../models/Favorites.model')
 const router = express.Router()
 const isAdmin = require('./../middlewares/isAdmin')
 const Place = require('./../models/Post.model')
@@ -52,10 +53,12 @@ router.get('/places/:id', async(req, res, next) => {
   try {
     const { id } = req.params
     const place = await Place.findById(id)
+    const isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
     res.render('place-infos', {
       title: 'Place',
       place,
       GOOGLE_API_KEY,
+      isFav
     })
   } catch (error) {
     next(error)
