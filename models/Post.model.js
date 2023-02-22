@@ -16,7 +16,8 @@ const postSchema = new Schema({
     required: true
   },
   area: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "Area",
     required: true
   },
   description: {
@@ -31,7 +32,11 @@ const postSchema = new Schema({
     type : Boolean,
   },
   location: { 
-    type: { type: String }, 
+    type: {
+      type: String, 
+      enum: ['Point'],
+      required: true
+    },
     coordinates: [Number] 
   },
   openningHours: [{String}], // verify type with Google Api
