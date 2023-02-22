@@ -56,3 +56,18 @@
   margin: auto;
   margin-top: 2rem;
 }
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1, h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.user-things {
+  display: flex;
+  justify-content: center;
+}
