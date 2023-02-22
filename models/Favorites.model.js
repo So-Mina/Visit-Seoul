@@ -6,7 +6,7 @@ const favoritesSchema = new Schema ({
     ref: "Post"
   },
   user: {
-    type: Schema.types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User"
   }
 },

@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -6,8 +6,7 @@
 
 #postImg {
   display: flex;
-  width: 200px;
-  height: auto;
+  width: 100%;
   margin: auto;
   justify-content: center;
 }
@@ -44,6 +43,11 @@
   margin-left: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.infos img {
+  width : 50%;
+  height: 50%;
 }
 
 #map {

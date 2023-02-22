@@ -1,6 +1,11 @@
 <h1>{{place.name}}</h1>
+
+  <i class="fa-regular fa-star" onclick="this.classList.toggle('fa-solid')"></i>
+
+  <i class="fa-regular fa-bookmark" onclick="this.classList.toggle('fa-solid')"></i>
+
 <div class="infos">
-   <img id="placeInfosImg" src={{place.photo}} alt="" width="600px">
+   <img id="placeInfosImg" src={{place.photo}} alt="{{place.name}}">
     <p>{{place.description}}</p> 
 </div>
 

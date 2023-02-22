@@ -1,7 +1,6 @@
 window.addEventListener('load', () => {
     getLocation()
-
-  });
+  })
 
 async function getLocation() {
     const query = window.location.pathname 
@@ -17,6 +16,5 @@ async function getLocation() {
       });
     } catch (error) {
         console.error(error)
-    }
-    
+    }   
 }
