@@ -8,31 +8,10 @@
 <input type="text" name="address" id="address">
 <label for="area">Area</label>
 <select name="area" id="area">
-    <option value="Dobong-gu">Dobong-gu</option>
-    <option value="Dongdaemun-gu">Dongdaemun-gu</option>
-    <option value="Dongjak-gu">Dongjak-gu</option>
-    <option value="Eunpyeong-gu">Eunpyeong-gu</option>
-    <option value="Gangbuk-gu">Gangbuk-gu</option>
-    <option value="Gangdong-gu">Gangdong-gu</option>
-    <option value="Gangnam-gu">Gangnam-gu</option>
-    <option value="Gangseo-gu">Gangseo-gu</option>
-    <option value="Geumcheon-gu">Geumcheon-gu</option>
-    <option value="Guro-gu">Guro-gu</option>
-    <option value="Gwanak-gu">Gwanak-gu</option>
-    <option value="Gwangjin-gu">Gwangjin-gu</option>
-    <option value="Jongno-gu">Jongno-gu</option>
-    <option value="Jung-gu">Jung-gu</option>
-    <option value="Jungnang-gu">Jungnang-gu</option>
-    <option value="Mapo-gu">Mapo-gu</option>
-    <option value="Nowon-gu">Nowon-gu</option>
-    <option value="Seocho-gu">Seocho-gu</option>
-    <option value="Seodaemun-gu">Seodaemun-gu</option>
-    <option value="Seongbuk-gu">Seongbuk-gu</option>
-    <option value="Seongdong-gu">Seongdong-gu</option>
-    <option value="Songpa-gu">Songpa-gu</option>
-    <option value="Yangcheon-gu">Yangcheon-gu</option>
-    <option value="Yeongdeungpo-gu">Yeongdeungpo-gu</option>
-    <option value="Yongsan-gu">Yongsan-gu</option>
+    <option selected disabled value="-1">Please select an area</option>
+    {{#each areas}}
+    <option value="{{_id}}">{{name}}</option>
+    {{/each}}
 </select>
 <label for="smallDescription">Small Description</label>
 <input type="text" name="smallDescription" id="smallDescription">

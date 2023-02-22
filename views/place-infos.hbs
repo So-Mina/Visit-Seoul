@@ -12,6 +12,15 @@
 
 <div id="map"></div>
 
+{{#if isAdmin}}
+<form action="/places/{{place._id}}/delete" method="post">
+  <input type="submit" value="Delete" />
+</form>
+<a href="/places/{{place._id}}/edit">Edit</a>
+{{/if}}
+
+
+
 
 <!--  Axios CDN  -->
 

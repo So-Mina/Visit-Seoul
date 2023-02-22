@@ -1,5 +1,6 @@
 const express = require('express')
 const Favorites = require('../models/Favorites.model')
+const Area = require('../models/Area.model')
 const router = express.Router()
 const isAdmin = require('./../middlewares/isAdmin')
 const Place = require('./../models/Post.model')
@@ -19,10 +20,13 @@ router.get('/places', async(req, res, next) => {
 })
 
 // create a new place
-router.get('/create', isAdmin, (req, res, next) => {
+router.get('/create', isAdmin, async (req, res, next) => {
   res.locals.isAdmin = true;
+  const areas = await Area.find()
+
   res.render('create', {
-    title: 'Create a Place'
+    title: 'Create a Place',
+    areas
   });
 });
 
@@ -54,12 +58,61 @@ router.get('/places/:id', async(req, res, next) => {
     const { id } = req.params
     const place = await Place.findById(id)
     const isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
+    res.locals.isAdmin = req.session.currentUser?.userType === 'admin';
+
     res.render('place-infos', {
       title: 'Place',
       place,
       GOOGLE_API_KEY,
       isFav
     })
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.post("/places/:id/delete", isAdmin, async (req, res, next) => {
+  res.locals.isAdmin = true;
+  try {
+    await Place.findByIdAndDelete(req.params.id)
+    res.redirect('/places')
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.get("/places/:id/edit", isAdmin, async(req, res, next) => {
+  try {
+    const place = await Place.findById(req.params.id).populate('area')
+    const areas = await Area.find({_id: {$ne: place.area}})
+    console.log(place)
+    res.locals.isAdmin = req.session.currentUser?.userType === 'admin';
+    res.render('edit-place', {
+      title: "Edit Place infos",
+      areas,
+      place
+    })
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.post("/places/:id/edit", async(req, res, next) => {
+  try {
+    const {name, photo, address, area, smallDescription, description, recommended, latitude, longitude } = req.body
+    console.log("edit place info", req.body)
+    await Place.findByIdAndUpdate(req.params.id, {
+      name: name,
+      photo: photo,
+      address: address,
+      area: area,
+      smallDescription: smallDescription,
+      description: description, 
+      recommended: recommended ? true : false,
+      location: { 
+        type: 'Point',
+        coordinates: [latitude, longitude] }}, { new: true })
+    res.redirect('/places')
   } catch (error) {
     next(error)
   }
