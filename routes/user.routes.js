@@ -37,6 +37,20 @@ router.get('/to-visit', isLoggedIn, (req, res, next) => {
   })
 })
 
+router.post("/:id/delete", async (req, res, next) => {
+  try {
+    await User.findByIdAndDelete(req.params.id)
+    req.session.destroy((error) => {
+      if (error) {
+        return next(error)
+      }
+      res.redirect('/sign-up')
+    })
+  } catch (error) {
+    next(error)
+  }
+})
+
 // Save changes
 
 module.exports = router
