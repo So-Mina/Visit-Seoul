@@ -1,7 +1,7 @@
 # Visit Seoul
 
 ## Description
-* Travelling to Seoul? Here's some of the best places to go around
+* Travelling to Seoul? Here's some of the best places to go around, easily find their loocation with our integrated Google Map view. Sign-up, log-in and add places to your favorites or to your visit list.
 
 ## Features
 * Locations shown with Google Map.
@@ -15,7 +15,7 @@
 
 ## Future Development
 - User can add a recommended place.
-- User can add a note to a place inside their To Visit list.
+- User can add a note to a place inside their To Visit list.User can upload a profile photo.
 - Search places by name or area.
 - Add slides of photos in the details.
 - Add more places, Parks, Museums.
