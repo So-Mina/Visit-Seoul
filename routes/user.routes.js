@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const isAuthenticated = require('../middlewares/isAuthenticated.js')
 const isLoggedIn = require('../middlewares/isAuthenticated.js')
+const bcrypt = require('bcryptjs')
+
 
 const User = require('./../models/User.model')
 
@@ -47,6 +49,32 @@ router.post("/:id/delete", async (req, res, next) => {
       }
       res.redirect('/sign-up')
     })
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.post('/profile', isLoggedIn, async(req, res, next) => {
+  const {currentPassword, newPassword} = req.body
+  console.log(currentPassword, newPassword)
+ 
+  try {
+    const foundUser = await User.findById(req.session.currentUser._id, {password: 1})
+    const matchingPass = await bcrypt.compare(currentPassword, foundUser.password)
+
+    if(!matchingPass){
+      return res.render('profile', {errorMessage: 'Password incorrect'})
+    }
+
+    const hashPassword = await bcrypt.hash(newPassword, 10)
+    const updatedUser = await User.findByIdAndUpdate(req.session.currentUser._id, {password: hashPassword}, {new: true})
+    req.session.destroy((error) => {
+      if (error) {
+        return next(error)
+      }
+      res.redirect('/log-in')
+    })
+
   } catch (error) {
     next(error)
   }
