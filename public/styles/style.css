@@ -144,6 +144,7 @@ nav p {
   nav p{
     display: initial;
   }
+}
 
 @media screen and (max-width : 425px) {
   .placesContainer {
