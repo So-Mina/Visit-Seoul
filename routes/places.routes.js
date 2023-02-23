@@ -10,7 +10,7 @@ const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 router.get('/places', async(req, res, next) => {
   try {
     const places = await Place.find()
-    res.locals.isAdmin = req.session.currentUser?.userType === 'admin'; // Set isAdmin to true if the user is an admin
+    res.locals.isAdmin = req.session.currentUser?.userType === 'admin' // Set isAdmin to true if the user is an admin
     res.render('places', {
       title : 'Places Page',
       places
@@ -60,7 +60,7 @@ router.get('/places/:id', async(req, res, next) => {
     const place = await Place.findById(id)
     const isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
     const isMarked = await Visit.findOne({post: id, user: req.session.currentUser._id})
-    res.locals.isAdmin = req.session.currentUser?.userType === 'admin';
+    res.locals.isAdmin = req.session.currentUser?.userType === 'admin'
 
     res.render('place-infos', {
       title: 'Place',

@@ -1,3 +1,14 @@
+{{#if isAdmin}}
+  <div class="buttons">
+    <form action="/places/{{place._id}}/delete" method="post">
+      <input type="submit" value="Delete" />
+    </form>
+    <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
+  </div>
+{{/if}}
+
+
+
 <h1 data-id="{{place._id}}">{{place.name}}</h1>
 
 <div class="icons">
@@ -17,15 +28,6 @@
 </div>
 
 <div id="map"></div>
-
-{{#if isAdmin}}
-<form action="/places/{{place._id}}/delete" method="post">
-  <input type="submit" value="Delete" />
-</form>
-<a href="/places/{{place._id}}/edit">Edit</a>
-{{/if}}
-
-
 
 
 <!--  Google Maps Key  -->

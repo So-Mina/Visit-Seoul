@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles/style.css" />
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       {{#each css}}
-        <link rel='stylesheet' href='/stylesheets/{{this}}.css' />
+        <link rel='stylesheet' href='/styles/{{this}}.css' />
       {{/each}}
       <link
       rel="stylesheet"
@@ -62,8 +62,9 @@
         {{/if}}
     </nav>
 
+    <main>
     {{{body}}}
-
+    </main>
   </body>
 
 </html>
