@@ -3,13 +3,11 @@
      <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
 
     <form action="/places/{{place._id}}/delete" method="post">
-      <button type="submit"><i class="fa-solid fa-trash-can"></i> Delete</button>
+      <button type="submit" class="delete"><i class="fa-solid fa-trash-can"></i> Delete</button>
     </form>
   
   </div>
 {{/if}}
-
-
 
 <h1 data-id="{{place._id}}">{{place.name}}</h1>
 

@@ -135,3 +135,56 @@ form .button {
   align-items: center;
   margin: 1rem;
 }
+
+nav p {
+  display: none;
+}
+
+@media screen and (min-width : 768px) {
+  nav p{
+    display: initial;
+  }
+}
+
+@media screen and (max-width : 425px) {
+  .placesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .postContainer {
+    width: 70%;
+    border: 1px solid rgb(193, 202, 211);
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 1rem;
+    box-sizing: content-box;
+  }
+  .infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    margin-top: 3rem;
+  }
+}
+
+/* delete button */
+
+.delete {
+  background-color: red;
+  color: white;
+  border: 3px solid red;
+}
+
+.delete:hover {
+  border: 3px solid darkred;
+}
+
+.delete i {
+  color: white;
+}
