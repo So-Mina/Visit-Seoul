@@ -1,28 +1,56 @@
 <h1>Create a new place</h1>
-<form action="/places/create" method="post">
-<label for="name">Name</label>
-<input type="text" name="name" id="name" placeholder="name">
-<label for="photo">Photo</label>
-<input type="text" name="photo" id="photo" placeholder="photo">
-<label for="address">Address</label>
-<input type="text" name="address" id="address">
-<label for="area">Area</label>
-<select name="area" id="area">
-    <option selected disabled value="-1">Please select an area</option>
-    {{#each areas}}
-    <option value="{{_id}}">{{name}}</option>
-    {{/each}}
-</select>
-<label for="smallDescription">Small Description</label>
-<input type="text" name="smallDescription" id="smallDescription">
-<label for="description">Description</label>
-<input type="text" name="description" id="description">
-<label for="recommended">Recommended</label>
-<input type="checkbox" name="recommended" id="recommended">
-<label for="latitude">Latitude</label>
-<input type="text" name="latitude" id="latitude">
-<label for="longitude">Longitude</label>
-<input type="text" name="longitude" id="longitude">
 
-<button>Create</button>
+<form action="/places/create" method="post">
+    
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name">
+    </div>
+
+    <div>
+        <label for="photo">Photo</label>
+        <input type="text" name="photo" id="photo" placeholder="Photo">
+    </div>
+
+    <div>
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" placeholder="Adress">
+    </div>
+
+    <div>
+        <label for="area">Area</label>
+        <select name="area" id="area">
+        <option selected disabled value="-1">Please select an area</option>
+        {{#each areas}}
+            <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    </div>
+
+    <div>
+        <label for="smallDescription">Small Description</label>
+        <input type="text" name="smallDescription" id="smallDescription" placeholder="Small description">
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea type="text" name="description" id="description" rows="15" cols="33" placeholder="Your descirption here"></textarea>
+    </div>
+
+    <div>
+        <label for="recommended">Recommended</label>
+        <input type="checkbox" name="recommended" id="recommended">
+    </div>
+
+    <div>
+        <label for="latitude">Latitude</label>
+        <input type="text" name="latitude" id="latitude" placeholder="Lattitude">
+    </div>
+
+    <div>
+        <label for="longitude">Longitude</label>
+        <input type="text" name="longitude" id="longitude" placeholder="Longitude">
+    </div>
+
+    <button>Create</button>
 </form>

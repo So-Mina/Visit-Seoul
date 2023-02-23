@@ -1,0 +1,30 @@
+.fa-trash-can {
+  color: red;
+}
+
+.fav button, .visit button {
+  background-color: #FCCCE8;
+  color: #38023B;
+  border: none;
+}
+
+.fav button:hover, .visit button:hover {
+  background-color: #820A89;
+  color: #FCCCE8;;
+  border: none;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+  border: 3px solid red;
+  margin-top: 10rem;
+}
+
+.delete:hover {
+  border: 3px solid darkred;
+}
+
+.delete i {
+  color: white;
+}
