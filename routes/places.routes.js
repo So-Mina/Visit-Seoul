@@ -46,7 +46,7 @@ router.post('/places/create', async(req, res, next) => {
       recommended: recommended ? true : false,
       location: { 
         type: 'Point',
-        coordinates: [latitude, longitude] }})
+        coordinates: [longitude, latitude] }})
     res.redirect('/places')
   } catch (error) {
     next(error)
@@ -59,8 +59,11 @@ router.get('/places/:id', async(req, res, next) => {
   try {
     const { id } = req.params
     const place = await Place.findById(id)
-    const isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
-    const isMarked = await Visit.findOne({post: id, user: req.session.currentUser._id})
+    let isFav = null, isMarked = null
+    if(req.session.currentUser) {
+      isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
+      isMarked = await Visit.findOne({post: id, user: req.session.currentUser._id})
+    }
     res.locals.isAdmin = req.session.currentUser?.userType === 'admin'
 
     res.render('place-infos', {
@@ -115,7 +118,7 @@ router.post("/places/:id/edit", async(req, res, next) => {
       recommended: recommended ? true : false,
       location: { 
         type: 'Point',
-        coordinates: [latitude, longitude] }}, { new: true })
+        coordinates: [longitude, latitude] }}, { new: true })
     res.redirect('/places')
   } catch (error) {
     next(error)
