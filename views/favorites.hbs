@@ -6,11 +6,11 @@
   
   {{#each allFavorites}}
 
-  <div class="postContainer" data-post-id="{{ post_id }}">
+  <div class="postContainer" data-post-id="{{ post._id }}">
     <h2>{{ post.name }}</h2>
     <img id="postImg" src={{post.photo}} alt="">
     <p>{{ post.smallDescription }}</p>
-    <a id="postLink" href="/places/{{_id}}">See more... </a>
+    <a id="postLink" href="/places/{{post._id}}">See more... </a>
     </div>
 
   {{/each}}
