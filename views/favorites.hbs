@@ -2,9 +2,12 @@
 
 {{#each allFavorites}}
 
-<div class="place" data-post-id="{{ place._id }}">
-  <h2>{{ place.name }}</h2>
-  <p>{{ place.smallDescription }}</p>
+<div class="postContainer" data-post-id="{{ _id }}">
+  <h2>{{ post.name }}</h2>
+  <img id="postImg" src={{post.photo}} alt="">
+  <p>{{ post.smallDescription }}</p>
+  <a id="postLink" href="/places/{{_id}}">See more... </a>
 </div>
 
 {{/each}}
+
