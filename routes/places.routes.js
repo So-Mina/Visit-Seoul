@@ -27,14 +27,14 @@ router.get('/create', isAdmin, async (req, res, next) => {
 
   res.render('create', {
     title: 'Create a Place',
-    css: ['createnew'],
+    css: ['editcreate'],
     areas
   });
 });
 
 router.post('/places/create', async(req, res, next) => {
   try {
-    const {name, photo, address, area, smallDescription, description, recommended, latitude, longitude } = req.body
+    const {name, photo, address, area, smallDescription, description, recommended, officialWebsite, latitude, longitude } = req.body
     console.log(req.body)
     await Place.create({
       name: name,
@@ -44,6 +44,7 @@ router.post('/places/create', async(req, res, next) => {
       smallDescription: smallDescription,
       description: description, 
       recommended: recommended ? true : false,
+      officialWebsite: officialWebsite,
       location: { 
         type: 'Point',
         coordinates: [longitude, latitude] }})
@@ -96,6 +97,7 @@ router.get("/places/:id/edit", isAdmin, async(req, res, next) => {
     res.locals.isAdmin = req.session.currentUser?.userType === 'admin';
     res.render('edit-place', {
       title: "Edit Place infos",
+      css: ['editcreate'],
       areas,
       place
     })
@@ -106,7 +108,7 @@ router.get("/places/:id/edit", isAdmin, async(req, res, next) => {
 
 router.post("/places/:id/edit", async(req, res, next) => {
   try {
-    const {name, photo, address, area, smallDescription, description, recommended, latitude, longitude } = req.body
+    const {name, photo, address, area, smallDescription, description, recommended, officialWebsite, latitude, longitude } = req.body
     console.log("edit place info", req.body)
     await Place.findByIdAndUpdate(req.params.id, {
       name: name,
@@ -116,6 +118,7 @@ router.post("/places/:id/edit", async(req, res, next) => {
       smallDescription: smallDescription,
       description: description, 
       recommended: recommended ? true : false,
+      officialWebsite: officialWebsite,
       location: { 
         type: 'Point',
         coordinates: [longitude, latitude] }}, { new: true })
