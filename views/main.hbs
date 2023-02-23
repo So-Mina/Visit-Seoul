@@ -1,14 +1,11 @@
-
-{{#if isAdmin}}
-
-{{/if}}
-
 <h1>Visit Seoul</h1>
 
-<h3>Our recommendations</h3>
-{{#each recoPlaces}}
-    {{> post this}}
-{{/each}}
-
-
 <a href="/places"><button>Enter</button></a>
+
+<h3>Our recommendations</h3>
+
+<div class="placesContainer">
+    {{#each recoPlaces}}
+        {{> post this}}
+    {{/each}}
+</div>
