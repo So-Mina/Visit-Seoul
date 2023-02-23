@@ -13,14 +13,27 @@
 
 <div class="profile-infos">
   <form action="/profile" method="post">
-    <label for="username">Your username</label>
-    <p>{{currentUser.username}}</p>
-    <label for="mail">Your mail</label>
-    <p>{{currentUser.mail}}</p>
-    <label for="password">Your password</label>
-    <input type="password" name="currentPassword">
-    <label for="password">Choose a new password</label>
-    <input type="password" name="newPassword">
+    <div>
+      <h3 for="username">Your username</h3>
+      <p>{{currentUser.username}}</p>
+    </div>
+
+    <div>
+      <h3 for="mail">Your mail</h3>
+      <p>{{currentUser.mail}}</p>
+    </div>
+
+    <div class="pword">
+      <h3 for="mail">Your password</h3>
+      <label for="password">Your current password</label>
+      <input type="password" name="currentPassword" placeholder="Current password">
+    </div>
+
+    <div class="pword">
+      <label for="password">Choose a new password</label>
+      <input type="password" name="newPassword" placeholder="New password">
+    </div>
+
     <button type="submit">Save changes</button>
   </form>
 </div>

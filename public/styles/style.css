@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  color: rgb(59, 59, 59);
+}
+
 /* post */
 
 #postImg {
@@ -54,11 +58,16 @@ a {
 
 .postContainer {
   width: 18%;
-  border: 1px solid black;
+  border: 1px solid rgb(193, 202, 211);
   margin: 2rem;
   padding: 1rem;
   box-shadow: 10px 5px 5px grey;
   border-radius: 1rem;
+  box-sizing: content-box;
+}
+
+h2 {
+  font-size: 1.2rem;
 }
 
 .placesContainer {
@@ -68,16 +77,10 @@ a {
   justify-content: center;
 }
 
-#postLink {
-  margin-top: 2rem;
-  text-align: right;
-  bottom: 0;
-}
-
 .infos {
   display: flex;
   margin: auto;
-  width: 75%;
+  width: 90%;
   margin-top: 3rem;
 }
 
@@ -112,12 +115,14 @@ button {
   margin: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
+  border: 1px solid rgb(193, 202, 211);
 }
 
 form .button {
   margin: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
+  border: 1px solid rgb(193, 202, 211);
 }
 
 .button {

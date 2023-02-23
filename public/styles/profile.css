@@ -28,3 +28,14 @@
 .delete i {
   color: white;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+form h3{
+  margin-top: 1rem;
+}
