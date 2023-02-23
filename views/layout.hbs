@@ -27,45 +27,41 @@
 
     <nav>
       <a href="/">
-        <i class="fa-solid fa-house"></i> 
-        <p>Home</p>
+
+      <i class="fa-solid fa-house"></i> <p>Home</p>
       </a>
       
       <a href="/places">
-        <i class="fa-solid fa-location-dot"></i> 
-        <p>Places</p>
+      <i class="fa-solid fa-location-dot"></i> <p>Places</p>
       </a>
 
         {{#if isLoggedIn}}
           <a href="/favorites">
-            <i class="fa-solid fa-star"></i> 
-            <p>Favorites</p>
+
+          <i class="fa-solid fa-star"></i> <p>Favorites</p>
           </a>
 
           <a href="/to-visit">
-            <i class="fa-solid fa-bookmark"></i> 
-            <p>To Visit</p>
+          <i class="fa-solid fa-bookmark"></i> <p>To Visit</p>
           </a>
         
           <a href="/profile">
-            <i class="fa-solid fa-user"></i>
-            <p>Profile</p>
+          <i class="fa-solid fa-user"></i> <p>Profile</p>
           </a>
 
           <a href="/log-out">
-            <i class="fa-solid fa-user-xmark"></i> 
-            <p>Log Out</p>
+          <i class="fa-solid fa-user-xmark"></i> <p>Log Out</p>
           </a>
         
         {{else}}
           <a href="/log-in">
-            <i class="fa-solid fa-user-plus"></i> 
-            <p>Log In</p>
+
+          <i class="fa-solid fa-user-plus"></i> <p>Log In</p>
           </a>
 
           <a href="/sign-up">
-            <i class="fa-solid fa-user-plus"></i> 
-            <p>Sign Up</p>
+          <i class="fa-solid fa-user-plus"></i> <p>Sign Up</p>
+
           </a>
         {{/if}}
     </nav>
