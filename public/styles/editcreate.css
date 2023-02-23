@@ -13,8 +13,8 @@ input {
   width: 20rem;
 }
 
-#description {
-  width: 20rem;
+textarea {
+  width : 22rem;
   height: 10rem;
 }
 

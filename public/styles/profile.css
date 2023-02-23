@@ -39,3 +39,8 @@ form {
 form h3{
   margin-top: 1rem;
 }
+
+.pword {
+  display: flex;
+  flex-direction: column;
+}
