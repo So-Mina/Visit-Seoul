@@ -5,14 +5,20 @@ const Place = require('./../models/Post.model')
 const User = require('./../models/User.model')
 const Favorites = require('./../models/Favorites.model')
 
- router.get('/favorites', isLoggedIn, (req, res, next) => {
-   res.render('favorites')
+ router.get('/favorites', isLoggedIn, async (req, res, next) => {
+   try {
+    const allFavorites = await Favorites.find(req.session.currentUser._id).populate('post')
+    console.log('all favorites : ', allFavorites)
+    res.status(200).json(allFavorites)
+  } catch (error) {
+    next (error)
+   }
  })
-
 
  router.post('/favorites/:placeId', async (req, res, next) => {
   try {
     const fav = await Favorites.findOne({post: req.params.placeId, user: req.session.currentUser._id})
+    console.log(fav)
     if (fav) {
       await Favorites.findOneAndDelete({post: req.params.placeId, user: req.session.currentUser._id})
     } else {
@@ -20,7 +26,7 @@ const Favorites = require('./../models/Favorites.model')
     }
     res.sendStatus(200)
   } catch (error) {
-    
+    next (error)
   }
  })
 

@@ -1,5 +1,10 @@
 <h1>My Favorites</h1>
 
+{{#each allFavorites}}
+
 <div class="place" data-post-id="{{ place._id }}">
   <h2>{{ place.name }}</h2>
+  <p>{{ place.smallDescription }}</p>
 </div>
+
+{{/each}}
