@@ -1,9 +1,14 @@
 <h1 data-id="{{place._id}}">{{place.name}}</h1>
 
 <div class="icons">
-  <i class="fa-regular fa-star favorite {{#if isFav}}fa-solid{{/if}}"></i>Add Favorites
-
-  <i class="fa-regular fa-bookmark to-visit {{#if isMarked}}fa-solid{{/if}}"></i>Add To Visit
+  <div class="fav"><i class="fa-regular fa-star favorite {{#if isFav}}fa-solid{{/if}}"></i>
+  <p> Add to Favorites</p>
+  </div>
+  
+  <div class="visit">
+  <i class="fa-regular fa-bookmark to-visit {{#if isMarked}}fa-solid{{/if}}"></i>
+  <p> Add to To Visit</p>
+  </div>
 </div>
 
 <div class="infos">

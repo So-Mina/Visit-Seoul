@@ -71,3 +71,10 @@ h1, h2 {
   display: flex;
   justify-content: center;
 }
+
+.fav, .visit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}

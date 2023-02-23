@@ -25,11 +25,11 @@ router.get('/profile', isAuthenticated, (req, res, next) => {
 // 
 // // submit the changes and go back to profile page
 
-router.get('/favorites', isLoggedIn, (req, res, next) => {
-  res.render('favorites', {
-    title: 'My Favorites'
-  })
-})
+// router.get('/favorites', isLoggedIn, (req, res, next) => {
+//   res.render('favorites', {
+//     title: 'My Favorites'
+//   })
+// })
 
 router.get('/to-visit', isLoggedIn, (req, res, next) => {
   res.render('to-visit', {

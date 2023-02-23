@@ -7,9 +7,9 @@ const Favorites = require('./../models/Favorites.model')
 
  router.get('/favorites', isLoggedIn, async (req, res, next) => {
    try {
-    const allFavorites = await Favorites.find(req.session.currentUser._id).populate('post')
+    const allFavorites = await Favorites.find({user: req.session.currentUser._id}).populate('post')
     console.log('all favorites : ', allFavorites)
-    res.status(200).json(allFavorites)
+    res.render('favorites', {allFavorites})
   } catch (error) {
     next (error)
    }
