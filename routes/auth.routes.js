@@ -6,7 +6,8 @@ const mongoose = require('mongoose')
 
 router.get('/sign-up', async (req, res, next) => {
   res.render('auth/sign-up', {
-    title: 'Sign up Page'
+    title: 'Sign up Page',
+    css : ['auth']
   })
 })
 
@@ -47,7 +48,8 @@ router.post('/sign-up', async (req, res, next) => {
 
 router.get('/log-in', (req, res, next) => {
   res.render('auth/log-in', {
-    title: 'log in Page'
+    title: 'log in Page',
+    css : ['auth']
   })
 })
 

@@ -9,7 +9,9 @@ const Favorites = require('./../models/Favorites.model')
    try {
     const allFavorites = await Favorites.find({user: req.session.currentUser._id}).populate('post')
     console.log('all favorites : ', allFavorites)
-    res.render('favorites', {allFavorites})
+    res.render('favorites', {
+    title: 'My Favorites',
+    allFavorites})
   } catch (error) {
     next (error)
    }
