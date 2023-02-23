@@ -60,6 +60,19 @@
 nav {
   display: flex;
   justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  background-color: lightcoral;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: black;
 }
 
 h1, h2 {
