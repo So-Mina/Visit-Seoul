@@ -6,7 +6,8 @@ const User = require('./../models/User.model')
 
 router.get('/profile', isAuthenticated, (req, res, next) => {
   res.render('profile', {
-    title : 'My Profile page'
+    title : 'My Profile page',
+    css: ['profile']
   })
 })
 

@@ -1,7 +1,7 @@
 {{#if isAdmin}}
   <div class="buttons">
     <form action="/places/{{place._id}}/delete" method="post">
-      <input type="submit" value="Delete" />
+      <input type="submit" value="Delete" class="button">
     </form>
     <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
   </div>
@@ -37,4 +37,3 @@ src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}">
 
 <!--  Connect main.js  -->
   <script type="text/javascript" src="/javascript/main.js"></script>
-

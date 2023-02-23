@@ -27,6 +27,7 @@ router.get('/create', isAdmin, async (req, res, next) => {
 
   res.render('create', {
     title: 'Create a Place',
+    css: ['createnew'],
     areas
   });
 });
