@@ -15,7 +15,8 @@
 
 ## Future Development
 - User can add a recommended place.
-- User can add a note to a place inside their To Visit list.User can upload a profile photo.
+- User can add a note to a place inside their To Visit list.
+- User can upload a profile photo on their profile.
 - Search places by name or area.
 - Add slides of photos in the details.
 - Add more places, Parks, Museums.
