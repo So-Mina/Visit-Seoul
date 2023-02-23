@@ -1,5 +1,6 @@
 const express = require('express')
 const Favorites = require('../models/Favorites.model')
+const Visit = require('../models/To-visit.model')
 const Area = require('../models/Area.model')
 const router = express.Router()
 const isAdmin = require('./../middlewares/isAdmin')
@@ -58,13 +59,15 @@ router.get('/places/:id', async(req, res, next) => {
     const { id } = req.params
     const place = await Place.findById(id)
     const isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
+    const isMarked = await Visit.findOne({post: id, user: req.session.currentUser._id})
     res.locals.isAdmin = req.session.currentUser?.userType === 'admin';
 
     res.render('place-infos', {
       title: 'Place',
       place,
       GOOGLE_API_KEY,
-      isFav
+      isFav,
+      isMarked
     })
   } catch (error) {
     next(error)

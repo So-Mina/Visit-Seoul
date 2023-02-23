@@ -8,8 +8,7 @@ const toVisitSchema = new Schema ({
   user: {
     type: Schema.Types.ObjectId,
     ref: "User"
-  },
-  note: String
+  }
 },
 {
   timestamps: true,
