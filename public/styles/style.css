@@ -135,3 +135,13 @@ form .button {
   align-items: center;
   margin: 1rem;
 }
+
+nav p {
+  display: none;
+}
+
+@media screen and (min-width : 768px) {
+  nav p{
+    display: initial;
+  }
+}
