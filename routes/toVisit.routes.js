@@ -5,9 +5,17 @@ const Place = require('./../models/Post.model')
 const User = require('./../models/User.model')
 const Visit = require('./../models/To-visit.model')
 
- router.get('/to-visit', isLoggedIn, (req, res, next) => {
-   res.render('to-visit')
- })
+ router.get('/to-visit', isLoggedIn, async (req, res, next) => {
+  try {
+   const allVisits = await Visit.find({user: req.session.currentUser._id}).populate('post')
+   console.log('all favorites : ', allVisits)
+   res.render('to-visit', {
+   title: 'My To Visit',
+   allVisits})
+ } catch (error) {
+   next (error)
+  }
+})
 
  router.post('/to-visit/:placeId', async (req, res, next) => {
   try {

@@ -1,9 +1,11 @@
 {{#if isAdmin}}
   <div class="buttons">
+     <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
+
     <form action="/places/{{place._id}}/delete" method="post">
-      <input type="submit" value="Delete" class="button">
+      <button type="submit"><i class="fa-solid fa-trash-can"></i> Delete</button>
     </form>
-    <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
+  
   </div>
 {{/if}}
 
@@ -26,6 +28,8 @@
    <img id="placeInfosImg" src={{place.photo}} alt="{{place.name}}">
     <p>{{place.description}}</p> 
 </div>
+
+
 
 <div id="map"></div>
 

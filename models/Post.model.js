@@ -31,6 +31,9 @@ const postSchema = new Schema({
   recommended: {
     type : Boolean,
   },
+  officialWebsite: {
+    type : String
+  },
   location: { 
     type: {
       type: String, 

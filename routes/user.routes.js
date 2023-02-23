@@ -34,11 +34,11 @@ router.get('/profile', isAuthenticated, (req, res, next) => {
 //   })
 // })
 
-router.get('/to-visit', isLoggedIn, (req, res, next) => {
-  res.render('to-visit', {
-    title: 'My To Visit List'
-  })
-})
+// router.get('/to-visit', isLoggedIn, (req, res, next) => {
+//   res.render('to-visit', {
+//     title: 'My To Visit List'
+//   })
+// })
 
 router.post("/:id/delete", async (req, res, next) => {
   try {

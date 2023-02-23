@@ -1,28 +1,55 @@
 <h1>Edit {{place.name}}'s informations</h1>
-<form action="/places/{{place._id}}/edit" method="post">
-<label for="name">Name</label>
-<input type="text" name="name" id="name" placeholder="name" value="{{place.name}}">
-<label for="photo">Photo</label>
-<input type="text" name="photo" id="photo" placeholder="photo" value="{{place.photo}}">
-<label for="address">Address</label>
-<input type="text" name="address" id="address" value="{{place.address}}">
-<label for="area">Area</label>
-<select name="area" id="area">
-    <option value="{{place.area._id}}" selected>{{place.area.name}}</option>
-    {{#each areas}}
-    <option value="{{_id}}">{{name}}</option>
-    {{/each}}
-</select>
-<label for="smallDescription">Small Description</label>
-<input type="text" name="smallDescription" id="smallDescription" value="{{place.smallDescription}}">
-<label for="description">Description</label>
-<input type="text" name="description" id="description" value="{{place.description}}">
-<label for="recommended">Recommended</label>
-<input type="checkbox" name="recommended" id="recommended" {{#if place.recommended}}checked{{/if}}>
-<label for="latitude">Latitude</label>
-<input type="text" name="latitude" id="latitude" value="{{place.location.coordinates.[1]}}">
-<label for="longitude">Longitude</label>
-<input type="text" name="longitude" id="longitude" value="{{place.location.coordinates.[0]}}">
+  <form action="/places/{{place._id}}/edit" method="post">
+  
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="name" value="{{place.name}}">
+  </div>
+
+  <div>
+    <label for="photo">Photo</label>
+    <input type="text" name="photo" id="photo" placeholder="photo" value="{{place.photo}}">
+  </div>
+
+  <div>
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address" value="{{place.address}}">
+  </div>
+
+  <div>
+    <label for="area">Area</label>
+    <select name="area" id="area">
+      <option value="{{place.area._id}}" selected>{{place.area.name}}</option>
+        {{#each areas}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+  </div>
+
+  <div>
+    <label for="smallDescription">Small Description</label>
+    <input type="text" name="smallDescription" id="smallDescription" value="{{place.smallDescription}}">
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description" value="{{place.description}}">
+  </div>
+
+  <div>
+    <label for="recommended">Recommended</label>
+    <input type="checkbox" name="recommended" id="recommended" {{#if place.recommended}}checked{{/if}}>
+  </div>
+
+  <div>
+    <label for="latitude">Latitude</label>
+    <input type="text" name="latitude" id="latitude" value="{{place.location.coordinates.[1]}}">
+  </div>
+
+  <div>
+    <label for="longitude">Longitude</label>
+    <input type="text" name="longitude" id="longitude" value="{{place.location.coordinates.[0]}}">
+  </div>
 
 {{!-- value="{{place.location.coordinates.0}}" --}}
 <button>Edit</button>
