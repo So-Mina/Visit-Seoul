@@ -10,6 +10,10 @@
 {{/if}}
 
 <h1 data-id="{{place._id}}">{{place.name}}</h1>
+<h2>{{place.address}} - {{place.area.name}}</h2> 
+  {{#if place.officialWebsite}} 
+    <h3><a href="{{place.officialWebsite}}" target="_blank">official website</a></h3>
+  {{/if}}
 
 <div class="icons">
   <div class="fav"><i class="fa-regular fa-star favorite {{#if isFav}}fa-solid{{/if}}"></i>
