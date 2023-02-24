@@ -43,7 +43,6 @@ const postSchema = new Schema({
     coordinates: [Number] 
   },
   openningHours: [{String}], // verify type with Google Api
-  officialWebsite: {String}, // veitfy type with Google Api 
   displayMap: String, // verify type with Google Api
 },
 {

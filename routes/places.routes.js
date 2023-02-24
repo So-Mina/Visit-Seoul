@@ -36,6 +36,7 @@ router.post('/places/create', async(req, res, next) => {
   try {
     const {name, photo, address, area, smallDescription, description, recommended, officialWebsite, latitude, longitude } = req.body
     console.log(req.body)
+
     await Place.create({
       name: name,
       photo: photo,
@@ -59,14 +60,14 @@ router.get('/places/:id', async(req, res, next) => {
 
   try {
     const { id } = req.params
-    const place = await Place.findById(id)
+    const place = await Place.findById(id).populate('area')
     let isFav = null, isMarked = null
     if(req.session.currentUser) {
       isFav = await Favorites.findOne({post: id, user: req.session.currentUser._id})
       isMarked = await Visit.findOne({post: id, user: req.session.currentUser._id})
     }
     res.locals.isAdmin = req.session.currentUser?.userType === 'admin'
-
+console.log(place.officialWebsite)
     res.render('place-infos', {
       title: 'Place',
       place,
