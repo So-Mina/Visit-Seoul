@@ -11,7 +11,7 @@ Sign-up, log-in and add places to your favorites or to your visit list.
 1. - Add places to your to visit list.
 
 ## Technologies Used
-* HTML, CSS and JavaScript. ExpressJS, MongoDB.
+* HBS, CSS and JavaScript. ExpressJS, MongoDB.
  [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Future Development
