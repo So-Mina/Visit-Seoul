@@ -1,7 +1,7 @@
 # Visit Seoul
 
 ## Description
-Travelling to Seoul? Here's some of the best places to go around, easily find their loocation with our integrated Google Map view. 
+Travelling to Seoul? Here's some of the best places to go around, easily find their location with our integrated Google Map view. 
 Sign-up, log-in and add places to your favorites or to your visit list.
 
 ## Features
@@ -11,7 +11,7 @@ Sign-up, log-in and add places to your favorites or to your visit list.
 1. - Add places to your to visit list.
 
 ## Technologies Used
-* HTML, CSS and JavaScript.
+* HBS, CSS and JavaScript. ExpressJS, MongoDB.
  [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Future Development
